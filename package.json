@@ -43,7 +43,6 @@
     }
   },
   "scripts": {
-    "postinstall": "yarn --ignore-scripts && yarn run build",
     "lint": "sewing-kit lint",
     "format": "sewing-kit format",
     "type-check": "sewing-kit type-check",
