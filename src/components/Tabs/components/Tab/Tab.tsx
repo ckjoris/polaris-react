@@ -14,6 +14,7 @@ export interface TabProps {
   focused?: boolean;
   siblingTabHasFocus?: boolean;
   selected?: boolean;
+  disabled?: boolean;
   panelID?: string;
   children?: React.ReactNode;
   url?: string;
@@ -29,6 +30,7 @@ export function Tab({
   children,
   onClick,
   selected,
+  disabled,
   url,
   panelID,
   measuring,
@@ -69,9 +71,12 @@ export function Tab({
     wasSelected.current = selected;
   }, [focused, id, measuring, panelID, selected]);
 
-  const handleClick = onClick && onClick.bind(null, id);
+  const handleClick = () => {
+    if(disabled) return;
+    onClick && onClick.bind(null, id);
+  }
 
-  const className = classNames(styles.Tab, selected && styles['Tab-selected']);
+  const className = classNames(styles.Tab, selected && styles['Tab-selected'], disabled && styles['Tab-disabled']);
 
   let tabIndex: 0 | -1;
 

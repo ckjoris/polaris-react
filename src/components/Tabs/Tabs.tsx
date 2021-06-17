@@ -256,6 +256,7 @@ class TabsInner extends PureComponent<CombinedProps, State> {
         siblingTabHasFocus={tabToFocus > -1}
         focused={index === tabToFocus}
         selected={index === selected}
+        disabled={tab.disabled}
         onClick={this.handleTabClick}
         panelID={tab.panelID || `${tab.id}-panel`}
         accessibilityLabel={tab.accessibilityLabel}

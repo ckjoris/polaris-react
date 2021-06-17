@@ -129,6 +129,14 @@ $focus-state-box-shadow-color: rgba(0, 0, 0, 0.8);
   @include text-emphasis-normal;
 }
 
+.Tab-disabled {
+  &,
+  > span {
+    color: #c2d6ed;
+    cursor: initial;
+  }
+}
+
 .Title {
   @include focus-ring;
   border-radius: var(--p-border-radius-base, 0);
